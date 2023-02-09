@@ -36,7 +36,7 @@ function onResult(frames) {
 }
 
 function openImagePage(urls) {
-    chrome.tabs.create({url:"page.html", active: false}, (tab) => {
+    chrome.tabs.create({url:"page/page.html", active: false}, (tab) => {
         setTimeout(()=>{
             chrome.tabs.sendMessage(tab.id,urls, (resp)=>{
                 chrome.tabs.update(tab.id, {active:true})
